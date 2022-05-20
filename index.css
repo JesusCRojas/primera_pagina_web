@@ -1,0 +1,447 @@
+*{
+    /*El box-sizing calcula el ancho y alto total de un elemento.
+      border-box le dice al navegador tomar en cuenta para cualquier 
+      valor que se especifique de borde o de relleno para el ancho o 
+      alto de un elemento. Es decir, si se define un elemento con un 
+      ancho de 100 pixeles. Esos 100 pixeles incluíran cualquier borde 
+      o relleno que se añadan, y la caja de contenido se encogerá para 
+      absorber ese ancho extra. Esto típicamente hace mucho más fácil 
+      dimensionar elementos. 
+
+      Entonces, cuando yo agrego margin o padding a los elementos, no 
+      debe crecer más allá del tamaño que se le dé.*/
+    box-sizing: border-box;
+}
+
+html{
+    /*La propiedad CSS scroll-behavior especifica el comportamiento del desplazamiento para un elemento con 
+      desplazamiento, cuando éste se produce debido a la navegación o a APIs CSSOM. Otros desplazamientos, 
+      p.ej. aquellos realizados por el usuario, no se ven afectados por esta propiedad. Cuando esta propiedad 
+      está especificada en el elemento raíz, se aplica al viewport.
+      
+      La caja se desplaza suavemente, utilizando una función de tiempo definida por el agente de usuario (user-agent) 
+      sobre un período de tiempo también definido por éste. Los agentes de usuario seguirán las convenciones de su 
+      propia plataforma, en caso de que existan.*/
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    
+    /*Le sacamos el margin porque el body viene con un margin feo en las esquinas.*/
+    margin: 0;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+
+/*Le quitamos los estilos a esta lista. Estos estilos pueden ser esos puntitos que pueden ser cuadrados o imágenes.*/
+ul{ list-style: none;}
+
+li{ font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+
+    /*Arriba y abajo es 10px, y derecha e izquierda son 20px.*/
+    padding: 10px 30px;
+
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+
+    /*Para agregarle sombra.*/
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    
+    color: white;
+    background-color: blueviolet;
+}
+
+button:hover{
+    background-color: rgb(101, 33, 165);
+}
+
+.container{
+
+    /*Cuando agrandes la ventana, el ancho máximo que debe tener debe ser de 1400px.*/
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+.color-acento{ color:blueviolet; }
+
+header{
+    background-color: rgb(245,245,245);
+    
+}
+
+/*No olvidar que el margin crea espacios alrededor y FUERA del elemento y el padding crea espacios DENTRO del elemento.
+  Si tenemos el border de color rojo y aumentamos el margin, el border no se verá grande, pero todos los elementos a su 
+  alrededor se distanciarán un poco, pero si le aumentamos el padding, el border rojo se verá más grande.*/
+header .logo{
+    margin: 0;
+
+    /*Arriba y abajo es 25px, y derecha e izquierda son 30px.*/
+    padding: 25px 30px;
+
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 1.6em;
+}
+
+header .container{
+    /*Explicado más abajo.*/
+    display: flex;
+
+    /*Esto hace que las cosas se ordenen en una columna.*/
+    flex-direction: column;
+
+    /*Explicado más abajo.*/
+    align-items: center;
+}
+
+header nav{
+    /*Explicado más abajo.*/
+    display: flex;
+
+    /*Esto hace que las cosas se ordenen en una columna.*/
+    flex-direction: column;
+
+    /*Texto alineado al centro*/
+    text-align: center;
+
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+
+    /*Para quitarle el subrayado.*/
+    text-decoration: none;
+
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{
+    color: blueviolet;
+}
+
+/*Flexbox es una manera de maquetar el CSS elementos de forma flexible.
+
+  Para usar flex debemos utilizar el display: flex.
+
+  Los layouts (diseños) en Flexbox trabajan en una sola dimensión, o sea, en filas o en columnas.
+  Por defecto se ponen en forma horizontal todos los elementos si están dentro de un contenedor, 
+  pero tú lo puedes cambiar a vertical con flex-direction: column.
+
+  Las propiedades align-items y justify-content se aplican solo a los contenedores flexibles. 
+  Necesita agregar display: flex para que align-items: center y justify-content: center trabajen.*/
+#hero{
+
+    /*Para que el contenedor ahora sea un contenedor flexible.*/
+    display: flex;
+
+    /*Esto centrará a todos los elementos de Flexbox al centro, sea horizontal o vertical, y no ocupará todo el espacio del <div>.*/
+    align-items: center;
+
+    /*Esto centrará a todos los elementos de Flexbox al centro, sea horizontal o vertical.*/
+    justify-content: center;
+
+    /*Alinear texto.*/
+    text-align: center;
+
+    /*Cambiando a vertical.*/
+    flex-direction: column;
+
+    height: 90vh;
+
+    /*Aquí, a parte de poner una imagen de fondo, le pondremos más oscuro.*/
+    background-image: linear-gradient(
+
+        0deg, /*Dirección de gradiente*/
+        rgba(0,0,0,0.5), /*Color de gradiente*/
+        rgba(0,0,0,0.5) /*Color de gradiente*/
+    ),
+    url("media/hero.jpg");
+
+    background-repeat: no-repeat;
+
+    /*Esta propiedad escala la imagen al mínimo tamaño, manteniendo también 
+      las proporciones, para que ocupe todo el contenedor. Es posible que esto 
+      provoque que parte de la imagen no se vea.*/
+    background-size: cover;
+    
+    /*El primer valor es la posición horizontal y el segundo valor es la vertical.*/
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+#somos-proya .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#nuestros-programas{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-programas .container{
+    padding: 150px 12px;
+}
+
+#nuestros-programas h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+/*El valor display: none le dice al navegador que no lo represente; el resultado es que 
+  el elemento queda escondido y el espacio que debería ocupar colapsado. visibility : controla 
+  la visibilidad del elemento, visible o no, pero no afecta a como el navegador representa la caja.
+  Entonces, con display: none el elemento no está visible y el navegador no lo representa, entonces,
+  el elemento no genera ninguna caja.*/
+#nuestros-programas p{
+    display: none;
+}
+
+#nuestros-programas .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+/*Con first-child seleccionamos al primero elemento con la clase carta, pues hay 3 elementos con clase carta.*/
+.carta:first-child{
+    background-image: linear-gradient(
+
+        0deg, /*Dirección de gradiente*/
+        rgba(0,0,0,0.5), /*Color de gradiente*/
+        rgba(0,0,0,0.5) /*Color de gradiente*/
+    ),
+    url("media/front-end.jpg");
+
+}
+
+/*Para seleccionar al segundo elemento con clase carta.*/
+.carta:nth-child(2){
+    background-image: linear-gradient(
+
+        0deg, /*Dirección de gradiente*/
+        rgba(0,0,0,0.5), /*Color de gradiente*/
+        rgba(0,0,0,0.5) /*Color de gradiente*/
+    ),
+    url("media/full-stack.jpg");
+}
+
+/*Para seleccionar al tercer elemento con clase carta.*/
+.carta:nth-child(3){
+    background-image: linear-gradient(
+
+        0deg, /*Dirección de gradiente*/
+        rgba(0,0,0,0.5), /*Color de gradiente*/
+        rgba(0,0,0,0.5) /*Color de gradiente*/
+    ),
+    url("media/python.jpg");
+
+}
+
+#caracteristicas .container{
+    text-align: center;
+    padding: 250px 12px;
+}
+
+#caracteristicas li{
+    margin: 16px 0px;
+    font-weight: bold;
+}
+
+#final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30,30,30);
+    color: white;
+    height: 80vh;
+}
+
+#final h2{
+
+    /*Por el vw, el texto siempre estará en una fila después de agrandar o achicar la ventana.*/
+    font-size: 9vw;
+}
+
+#final button{
+    font-size: 5vw;
+}
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/*Esto significa que cuando el ancho de la pantalla supere los 850px, se aplicarán los siguientes estilos.*/
+@media (min-width: 850px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    #somos-proya .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-proya .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somos-proya h2{
+        margin-top: 0px;
+    }
+
+    #somos-proya .img-container{
+        background-image: url("media/somos-proya.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 400px; 
+    }
+
+    #nuestros-programas .programas{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros-programas p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros-programas h2{
+        font-size: 4em;
+    }
+
+    #nuestros-programas h3{
+        margin-top: 0;
+    }
+
+    #nuestros-programas .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/front-end-cropped.jpg");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/full-stack-cropped.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/python-cropped.jpg");
+
+    }
+
+    #caracteristicas{
+        background-image: url("media/background-2.jpeg");
+        background-repeat: no-repeat;
+        background-size: 500px 400px;
+        background-position: calc(100vw - 500px) 120px;
+    }
+
+    #caracteristicas .container{
+        text-align: initial;
+    }
+
+    #caracteristicas ul{
+        margin-left: 100px;
+    }
+
+    #final h2{
+        font-size: 5em;
+    }
+
+    #final button{
+        font-size: 2em;
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1200px) {
+    #caracteristicas{
+        background-position-x: calc(100vw - 800px);
+    }
+}

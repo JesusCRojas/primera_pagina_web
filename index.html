@@ -1,0 +1,158 @@
+<!--Doctype o "Declaración del tipo de documento."-->
+<!DOCTYPE html> <!--Instrucción especial que le dice al navegador la versión de HTML que se va a utilizar.-->
+
+<!--Estableciendo el idioma por defecto de la página.
+
+    Le dice a los bots y similares que el <p> por ejemplo, está en español, es decir, para hacer 
+    la vida más fácil a los bots (o cualquier otro tipo de software cliente ).-->
+<html lang="en"> <!--El atributo global lang participa en la definición del lenguaje del elemento.-->
+<head>
+    <!--El elemento meta provee metadatos que no pueden ser expresados con otros elementos 
+        del encabezado (head), como title, base, link, style y script. Este elemento puede 
+        ser utilizado de tres maneras diferentes: con el atributo charset, name y http-equiv.
+    
+        El atributo charset debe estar solo y tener un valor que represente al conjunto de caracteres.
+        utf-8 es un conjunto de caracteres universal que incluye casi todos los caracteres de casi 
+        cualquier idioma humano.
+
+        Este tipo de codificación no tiene nada que ver con el idioma, sino con el sistema de caracteres 
+        que usará, y este mismo sistema de caracteres puede ser utilizado por muchos idiomas.-->
+        <meta charset="UTF-8"> 
+
+        <!--Esta es una definición del modo de compatibilidad de documentos. Se utiliza principalmente para mejorar 
+            la compatibilidad del código con IE, lo que obliga a IE a utilizar la última versión local actual del 
+            renderizado en modo estándar o renderizado con kernel de Chrome.
+    
+            La vista de compatibilidad es una característica que fue incorporada en Internet Explorer 8, que permiten 
+            al navegador mostrar las páginas web que no cumplen con los estándares como si corrieran en versiones 
+            anteriores de IE.
+    
+            A día de hoy, 2022, Microsoft ya no recomienda el uso de ésta meta etiqueta y en su lugar definir el documento 
+            como HTML5 con DOCTYPE.-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+        <!--Viewport es la etiqueta que mejor representa la web en movilidad, ya que nos permite indicar cómo se verá un 
+            proyecto web en los dispositivos móviles. Apple la creó para decirle al iPhone como debería renderizar el documento, 
+            convirtiéndose desde entonces en un estándar que ya está soportado por la mayoría de dispositivos.
+    
+            Nos sirve para definir qué área de pantalla está disponible al renderizar un documento, nivel de escalado y el zoom 
+            que debe mostrar inicialmente. Todo ello, con parámetros que le damos a la propia etiqueta META.
+    
+            Por ejemplo, si tu diseño móvil está trazado intencionalmente a 320px, tu puedes especificar el ancho del viewport:
+            <meta name="viewport" content="width=320">.
+    
+            Para layouts flexibles es más práctico basar el ancho de tu viewport en el dispositivo en cuestión, así que para empatar 
+            el ancho de tu layout con el del dispositivo ingresarías: <meta name="viewport" content="width=device-width">.
+    
+            Para estar extra seguro de que tu layout se mostrará como lo planeaste, puedes también fijar el nivel del zoom. Esto, por 
+            ejemplo: <meta name="viewport" content="initial-scale=1">.
+    
+            Asegurará que al abrir, tu layout se mostrará correctamente a una escala de 1:1. Ningún zoom será aplicado. Podrías incluso 
+            ir más allá y prevenir cualquier zoom por el usuario: <meta name="viewport" content="maximum-scale=1">.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Mi primera página web</title>
+    
+        <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--El header.-->
+    <!--Va a tener nuestro logo y menú.-->
+    <header>
+        <div class="container">
+            <!--El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.-->
+            <p class="logo">Mi primera página web</p>
+
+            <!--El <nav> representa una sección de una página cuyo propósito es proporcionar enlaces de navegación, ya sea dentro del 
+                documento actual o a otros documentos. Ejemplos comunes de secciones de navegación son menús, tablas de contenido e índices.-->
+            <nav>
+                <!--Estos enlaces te envian a las secciones de la misma página en la que está con esos ID.-->
+                <a href="#somos-proya">Quiénes Somos</a>
+                <a href="#nuestros-programas">Nuestros Programas</a>
+                <a href="#caracteristicas">Características</a>
+            </nav>
+        </div>
+    </header>
+    <!--Fin del header.-->
+
+    <!--Una parte del contenido.
+        A las <section> se les pone ID.
+        Sirve para determinar qué CONTENIDO corresponde a qué parte de un esquema. Así es como se divide el contendio, en <section>.
+        Hero es el banner grande que siempre aparece al principio de la página.-->
+    <section id="hero">
+        <h1>Aprende a Programar <br> con los Mejores</h1>
+        <button>¡APLICA YA!</button>
+    </section>
+    <!--Fin de la parte del contenido.-->
+
+    <!--Una parte del contenido.-->
+    <section id="somos-proya">
+        <!--No importa que este <div> tenga el mismo nombre de clase que el div del <header>, pues,
+            está adentro de un <section> con un ID.-->
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2>Somos <span class="color-acento">ProgramaYa!</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit veritatis a autem sed dignissimos commodi, voluptas incidunt voluptatibus cum, quia neque nulla consequatur laborum accusamus, perspiciatis odio nemo minus vel!</p>
+            </div>
+        </div>
+    </section>
+    <!--Fin de la parte del contenido.-->
+
+    <!--Una parte del contenido.-->
+    <section id="nuestros-programas">
+        <div class="container">
+            <h2>Nuestros Programas</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Programador Front-end</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button>+ Info</button>
+                </div>
+                <div class="carta">
+                    <h3>Programador Full-Stack</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button>+ Info</button>
+                </div>
+                <div class="carta">
+                    <h3>Programador Python</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero corporis incidunt saepe qui commodi quasi neque veniam quam, aspernatur est beatae maxime animi sed reiciendis mollitia ducimus veritatis repellendus?</p>
+                    <button>+ Info</button>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <!--Fin de la parte del contenido.-->
+
+    <!--Una parte del contenido.-->
+    <section id="caracteristicas">
+        <div class="container">
+            <ul>
+                <li>✔️ 100% online</li>
+                <li>✔️ Flexibilidad de horarios</li>
+                <li>✔️ Soporte 1:1</li>
+                <li>✔️ Asistencia financiera</li>
+            </ul>
+        </div>
+    </section>
+    <!--Fin de la parte del contenido.-->
+
+    <!--Una parte del contenido.-->
+    <section id="final">
+        <h2>¿Listo para programar?</h2>
+        <button>¡APLICA YA!</button>
+    </section>
+    <!--Fin de la parte del contenido.-->
+
+    <!--El footer.-->
+    <footer>
+        <div class="container">
+            <!--Con &copy mostramos el símbolo del copyright.-->
+            <p>&copy; ProgramaYa 2021</p>
+        </div>
+    </footer>
+    <!--Fin del footer.-->
+</body>
+</html>
