@@ -14,10 +14,8 @@
 }
 
 html{
-    /*La propiedad CSS scroll-behavior especifica el comportamiento del desplazamiento para un elemento con 
-      desplazamiento, cuando éste se produce debido a la navegación o a APIs CSSOM. Otros desplazamientos, 
-      p.ej. aquellos realizados por el usuario, no se ven afectados por esta propiedad. Cuando esta propiedad 
-      está especificada en el elemento raíz, se aplica al viewport.
+    /*La propiedad CSS scroll-behavior ESPECIFICA EL COMPORTAMIENTO DEL DESPLAZAMIENTO para un ELEMENTO
+      CON DESPLAZAMIENTO, cuando éste se produce debido a la navegación o a APIs CSSOM.
       
       La caja se desplaza suavemente, utilizando una función de tiempo definida por el agente de usuario (user-agent) 
       sobre un período de tiempo también definido por éste. Los agentes de usuario seguirán las convenciones de su 
@@ -65,7 +63,7 @@ button:hover{
 
 .container{
 
-    /*Cuando agrandes la ventana, el ancho máximo que debe tener debe ser de 1400px.*/
+    /*Cuando AGRANDES la ventana, o sea, de PEQUEÑO A GRANDE, el ancho máximo que debe tener debe ser de 1400px.*/
     max-width: 1400px;
 
     margin: auto;
@@ -123,6 +121,7 @@ header a{
     text-decoration: none;
 
     font-weight: bold;
+    
     color: black;
 }
 
